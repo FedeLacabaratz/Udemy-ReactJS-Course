@@ -1,3 +1,3 @@
-# PROYECTOS Y EJERCICIOS DEL CURSO DE JAVASCRIPT
+# PROYECTOS Y EJERCICIOS DEL CURSO DE REACTJS
 
-Proyectos, ejercicios y ensayos del curso de JavaScript de Udemy
+Curso ReactJS para aprender Hooks, Context y Redux, MERN, Gatsby, GraphQL Creando más de 15 proyectos.
