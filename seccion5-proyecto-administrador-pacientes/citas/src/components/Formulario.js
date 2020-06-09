@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { v4 as uuid } from 'uuid';
+import PropTypes from 'prop-types';
 
 const Formulario = ({ crearCita }) => {
 
@@ -31,7 +32,7 @@ const Formulario = ({ crearCita }) => {
         e.preventDefault();
 
         // Validar
-        if (paciente.trim() === '' || responsable.trim() === '' || fecha.trim() === '' || hora.trim() === '' || sintomas.trim() === '') {
+        if (paciente.trim() === '' || fecha.trim() === '' || hora.trim() === '' || sintomas.trim() === '') {
             setError(true);
             setTimeout(() => {
                 setError(false);
@@ -76,7 +77,7 @@ const Formulario = ({ crearCita }) => {
                     type="text"
                     name="responsable"
                     className="u-full-width"
-                    placeholder="Nombre del Responsable *(Si el paciente es menor)"
+                    placeholder="Nombre del Responsable *(Solo si el paciente es menor)"
                     onChange={handleChange}
                     value={responsable}
                 />
@@ -111,6 +112,10 @@ const Formulario = ({ crearCita }) => {
             </form>
         </Fragment>
     );
+}
+
+Formulario.propTypes = {
+    crearCita: PropTypes.func.isRequired
 }
 
 export default Formulario;
