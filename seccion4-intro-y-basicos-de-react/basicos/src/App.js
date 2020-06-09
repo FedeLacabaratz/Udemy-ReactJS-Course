@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import Header from './components/Header.jsx'
 import Footer from './components/Footer';
 import Producto from './components/Producto';
+import Carrito from './components/Carrito';
 
 function App() {
 
@@ -25,8 +26,15 @@ function App() {
 
       <h1>Lista de Productos</h1>
       {productos.map(producto => (
-        <Producto key={producto.id} producto={producto} carrito={carrito} setCarrito={setCarrito} productos={productos} />
+        <Producto
+          key={producto.id}
+          producto={producto}
+          carrito={carrito}
+          setCarrito={setCarrito}
+          productos={productos} />
       ))}
+
+      <Carrito carrito={carrito} setCarrito={setCarrito}/>
 
       <Footer fecha={fecha} />
     </Fragment>
