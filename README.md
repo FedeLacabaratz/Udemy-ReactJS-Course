@@ -1,8 +1,8 @@
-# PROYECTOS Y EJERCICIOS DEL CURSO DE REACTJS
+# PROJECTS Y EXERCISES FROM THE REACTJS COURSE
 
-Curso ReactJS para aprender Hooks, Context y Redux, MERN, Gatsby, GraphQL Creando más de 15 proyectos.
+ReactJS course to learn about Hooks, Context and Redux, MERN, Gatsby & GraphQL; Creating over 15 different projects.
 
-## LINKS A LOS PROYECTOS REALIZADOS (Se iran agregando mas a medida que se vayan haciendo)
+## LINKS TO THE PROJECTS (This section will be updated as more projects are being completed)
 
 [CitasMed App](https://citas-med-app.netlify.app/) - Manage your medical appointment agenda with this very simple app made with React
 
