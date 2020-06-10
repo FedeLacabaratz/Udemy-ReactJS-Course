@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import { obtenerDiferenciaYear, calcularMarca, calcularPlan } from '../helpers';
+import PropTypes from 'prop-types';
 
 const Campo = styled.div`
     display: flex;
@@ -42,23 +44,32 @@ const Boton = styled.button`
     }
 `;
 
-const Formulario = () => {
+const Error = styled.div`
+    background-color: red;
+    color: white;
+    padding: 1rem;
+    width: 94%;
+    text-align: center;
+    margin-bottom: 2rem;
+`;
+
+const Formulario = ({ setResumen, setCargando }) => {
 
     const [datos, setDatos] = useState({
         marca: '',
         year: '',
         plan: ''
     });
+    const [error, setError] = useState(false);
 
     // Extraer los valores del state
-
     const { marca, year, plan } = datos;
 
     // Leer los datos del formulario y colocarlos en el state
     const obtenerInformacion = e => {
         setDatos({
             ...datos,
-            [e.target.name] : e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
@@ -66,13 +77,49 @@ const Formulario = () => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        const [error, setError] = useState(false);
-    }
+        if (marca.trim() === '' || year.trim() === '' || plan.trim() === '') {
+            setError(true)
+            setTimeout(() => {
+                setError(false)
+            }, 1500);
+            return;
+        }
+
+        // Una base de 2000 (Precio base)
+        let resultado = 2000;
+
+        // Obtener la diferencia de años
+        const diferencia = obtenerDiferenciaYear(year);
+
+        // Por cada año hay que restar el 3%
+        resultado -= ((diferencia * 3) / 100) * resultado;
+
+        // Europeo 30%
+        // Americano 15%
+        // Asiatico 5% 
+        resultado = calcularMarca(marca) * resultado;
+
+        // Basico aumenta 20%
+        // Completo aumenta 50%
+        resultado = parseFloat(calcularPlan(plan) * resultado).toFixed(2);
+
+        setCargando(true)
+        setTimeout(() => {
+            // Elimina el spinner
+            setCargando(false)
+            // Pasa la info al componente principal
+            setResumen({
+                cotizacion: Number(resultado),
+                datos
+            })
+        }, 2000);
+    };
 
     return (
         <form
             onSubmit={handleSubmit}
         >
+            {error ? <Error>Todos los campos son obligatorios</Error> : null}
             <Campo>
                 <Label>Marca</Label>
                 <Select
@@ -123,9 +170,13 @@ const Formulario = () => {
                     onChange={obtenerInformacion}
                 /> Completo
             </Campo>
-            <Boton type="button">Cotizar</Boton>
+            <Boton type="submit">Cotizar</Boton>
         </form>
     );
+};
+Formulario.propTypes = {
+    setResumen: PropTypes.func.isRequired,
+    setCargando: PropTypes.func.isRequired
 };
 
 export default Formulario;
