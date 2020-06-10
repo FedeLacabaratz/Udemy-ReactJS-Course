@@ -8,3 +8,5 @@ ReactJS course to learn about Hooks, Context and Redux, MERN, Gatsby & GraphQL; 
 
 [ControlBudget App](https://control-budget.netlify.app/) - Control your weekly budget with this very simple app made with React.
 
+[CarInsuranceQuote App](https://cotiza-tu-seguro.netlify.app/) - Get an instant quote for your car insurance with this very simple app made with React.
+
