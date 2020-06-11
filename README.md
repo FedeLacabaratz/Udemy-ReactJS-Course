@@ -10,3 +10,5 @@ ReactJS course to learn about Hooks, Context and Redux, MERN, Gatsby & GraphQL; 
 
 [CarInsuranceQuote App](https://cotiza-tu-seguro.netlify.app/) - Get an instant quote for your car insurance with this very simple app made with React.
 
+[BreakingBadQuotes App](https://breakingbad-quote-of-the-day.netlify.app/) - Get your "Breaking Bad TV Series"'s quote of the day with this very simple app made with React.
+
