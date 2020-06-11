@@ -12,3 +12,5 @@ ReactJS course to learn about Hooks, Context and Redux, MERN, Gatsby & GraphQL; 
 
 [BreakingBadQuotes App](https://breakingbad-quote-of-the-day.netlify.app/) - Get your "Breaking Bad TV Series"'s quote of the day with this very simple app made with React.
 
+[GetMyCityWeather App](https://get-my-city-weather.netlify.app/) - Get your city's weather right now with this very simple app made with React.
+
