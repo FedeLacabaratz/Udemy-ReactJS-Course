@@ -14,3 +14,5 @@ ReactJS course to learn about Hooks, Context and Redux, MERN, Gatsby & GraphQL; 
 
 [GetMyCityWeather App](https://get-my-city-weather.netlify.app/) - Get your city's weather right now with this very simple app made with React.
 
+[CryptoCurrency App](https://crypto-cotizador-react.netlify.app/) - Get your updated cryptocurrency price with this very simple app made with React.
+
