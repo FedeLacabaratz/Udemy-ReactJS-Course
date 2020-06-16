@@ -1,3 +1,6 @@
+# AVISO
+Esta App funcionara si se clona el proyecto y en local. No se hizo deployment ya que la API newsapi.org requeria una cuenta paga.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
