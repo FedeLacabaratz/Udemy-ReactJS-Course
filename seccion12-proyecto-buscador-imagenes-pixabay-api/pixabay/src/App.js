@@ -63,7 +63,7 @@ function App() {
   return (
     <div className="container">
       <div className="mt-5 jumbotron">
-        <p className="lead text-center">Buscador de Imagenes</p>
+        <p className="lead display-4 text-center">Buscador de Imagenes</p>
 
         <Formulario setBusqueda={setBusqueda} />
       </div>
