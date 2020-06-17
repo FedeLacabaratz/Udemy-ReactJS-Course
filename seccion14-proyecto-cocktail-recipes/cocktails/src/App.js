@@ -4,7 +4,7 @@ import Formulario from "./components/Formulario";
 import CategoriasProvider from "./context/CategoriasContext";
 import RecetasProvider from "./context/RecetasContext";
 import ListaRecetas from "./components/ListaRecetas";
-import ModalProvider, { ModalContext } from "./context/ModalContext";
+import ModalProvider from "./context/ModalContext";
 
 function App() {
   return (

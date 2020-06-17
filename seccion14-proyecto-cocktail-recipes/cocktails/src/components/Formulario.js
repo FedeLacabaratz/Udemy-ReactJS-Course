@@ -10,7 +10,7 @@ const Formulario = () => {
     });
 
     // Extraigo mis categorias desde el context
-    const { categories } = useContext(CategoriasContext);
+    const { categories, ingredients } = useContext(CategoriasContext);
     const { setSearchRecipes, setConsult } = useContext(RecetasContext);
 
     // Funcion para leer los contenidos
@@ -27,7 +27,7 @@ const Formulario = () => {
 
         setSearchRecipes(search);
         setConsult(true);
-    }
+    };
 
     return ( 
         <form 
@@ -39,19 +39,24 @@ const Formulario = () => {
             </fieldset>
             <div className="row mt-4">
                 <div className="col-md-4">
-                    <input 
-                        type="text"
+                <select
                         className="form-control"
                         name="ingrediente"
-                        placeholder="Find Cocktails by Ingredients..."
                         onChange={obtainDataReceipe}
-                    />
+                        required
+                    >
+                        <option value="">-- Select Ingredient --</option>
+                        {ingredients.map(ingredient => (
+                            <option key={ingredient.strIngredient1} value={ingredient.strIngredient1}>{ingredient.strIngredient1}</option>
+                        ))}
+                    </select>
                 </div>
                 <div className="col-md-4">
                     <select
                         className="form-control"
                         name="categoria"
                         onChange={obtainDataReceipe}
+                        required
                     >
                         <option value="">-- Select Category --</option>
                         {categories.map(category => (

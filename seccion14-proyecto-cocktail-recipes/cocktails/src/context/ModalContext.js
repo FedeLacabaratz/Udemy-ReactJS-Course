@@ -19,7 +19,7 @@ const ModalProvider = (props) => {
 
             const resultado = await axios.get(url);
             
-            setSelectedRecipe(resultado.data.drinks[0])
+            setSelectedRecipe(resultado.data.drinks[0]);
         }
         obtainRecipe();
     }, [idrecipe])

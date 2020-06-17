@@ -14,14 +14,21 @@ function getModalStyle() {
   };
 }
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    position: "absolute",
-    width: 600,
-    backgroundColor: theme.palette.background.paper,
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
+const useStyles = makeStyles(theme => ({
+    paper: {
+      position: 'absolute',
+      [theme.breakpoints.down('sm')]: {
+        width: '100%',  
+      },
+      [theme.breakpoints.up('sm')]: {
+        width: 450,  
+      },
+      maxHeight: 800,
+      overflowY: 'auto',
+      backgroundColor: theme.palette.background.paper,
+      boxShadow: theme.shadows[5],
+      padding: theme.spacing(2, 4, 3),
+    },
 }));
 
 const Receta = ({ recipe }) => {
@@ -80,7 +87,7 @@ const Receta = ({ recipe }) => {
             open={open}
             onClose={() => {
                 setIdRecipe(null);
-                setSelectedRecipe({})
+                setSelectedRecipe({});
                 handleClose();
             }}
           >
