@@ -20,6 +20,6 @@ ReactJS course to learn about Hooks, Context and Redux, MERN, Gatsby & GraphQL; 
 
 [MusiciansAndLyrics App](https://musicians-and-lyrics.netlify.app/) - Get your favorites musicians and lyrics to their songs with this very simple app made with React.
 
-FindMeACocktail App](https://findmeacocktail.netlify.app/) - Get thousands of cocktail recipes with this very simple app made with React.
+[FindMeACocktail App](https://findmeacocktail.netlify.app/) - Get thousands of cocktail recipes with this very simple app made with React.
 
 
