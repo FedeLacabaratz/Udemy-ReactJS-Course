@@ -18,4 +18,6 @@ ReactJS course to learn about Hooks, Context and Redux, MERN, Gatsby & GraphQL; 
 
 [PixabayFindMyImage App](https://pixabay-findmyimage.netlify.app/) - Get your high definition image from Pixabay with this very simple app made with React.
 
+[MusiciansAndLyrics App](https://musicians-and-lyrics.netlify.app/) - Get your favorites musicians and lyrics to their songs with this very simple app made with React.
+
 
