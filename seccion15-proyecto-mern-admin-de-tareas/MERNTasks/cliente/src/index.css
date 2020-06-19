@@ -74,6 +74,13 @@ a {
 .btn-secundario {
   background-color: var(--gris1);
 }
+.btn-eliminar {
+  -webkit-box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
+  -moz-box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
+  box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
+  background-color: var(--blanco);
+  color: var(--gris2);
+}
 .btn-block {
   display: block;
   width: 100%;
