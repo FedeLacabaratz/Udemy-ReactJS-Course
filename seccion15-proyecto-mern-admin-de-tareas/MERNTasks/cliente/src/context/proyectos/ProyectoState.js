@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
-import uuid, { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import ProyectoContext from './ProyectoContext';
-import proyectoReducer from './proyectoReducer';
+import ProyectoReducer from './ProyectoReducer';
 import { 
     FORMULARIO_PROYECTO, 
     OBTENER_PROYECTOS,
@@ -28,7 +28,7 @@ const ProyectoState = props => {
     };
 
     // Dispatch para ejecutar las acciones
-    const [ state, dispatch ] = useReducer(proyectoReducer, initialState);
+    const [ state, dispatch ] = useReducer(ProyectoReducer, initialState);
 
     // Serie de funciones para el CRUD
     const mostrarFormulario = () => {
