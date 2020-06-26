@@ -20,6 +20,10 @@ const UsuariosSchema = mongoose.Schema({
     registro: {
         type: Date,
         default: Date.now()
+    },
+    __v: {
+        type: Number,
+        select: false
     }
 });
 
