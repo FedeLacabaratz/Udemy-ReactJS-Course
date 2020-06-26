@@ -18,7 +18,7 @@ exports.crearUsuario = async (req, res) => {
         // Revisar que el usuario registrado sea unico
         let usuario = await Usuario.findOne({ email });
 
-        if (usuario) {
+        if(usuario) {
             return res.status(400).json({ msg: 'El usuario ya existe' });
         }
 
@@ -27,7 +27,7 @@ exports.crearUsuario = async (req, res) => {
 
         // Hashear el password
         const salt = await bcryptjs.genSalt(10);
-        usuario.password = await bcryptjs.hash(password, salt)
+        usuario.password = await bcryptjs.hash(password, salt);
 
         // Guardar usuario
         await usuario.save();

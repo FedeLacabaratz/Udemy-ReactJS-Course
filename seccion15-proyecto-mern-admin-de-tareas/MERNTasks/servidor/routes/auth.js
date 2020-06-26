@@ -3,15 +3,19 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController')
 const { check } = require('express-validator');
+const auth = require('../mideleware/auth');
 
-// Autentica un usuario
+// Autentica un usuario e iniciar sesion
 // Endpoint = api/auth
 router.post('/',
-    [
-        check('email', 'Agrega un email válido').isEmail(),
-        check('password', 'El password debe de ser mínimo de 6 caracteres').isLength({ min: 6 })
-    ],
     authController.autenticarUsuario
 );
+
+// Obtiene el usuario autenticado
+router.get('/',
+    auth,
+    authController.usuarioAutenticado
+);
+
 
 module.exports = router;
