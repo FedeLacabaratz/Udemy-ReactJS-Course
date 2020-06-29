@@ -13,7 +13,7 @@ const Barra = () => {
     }, []);
 
 
-    return ( 
+    return (
         <header className="app-header">
             {usuario ? (<p className="nombre-usuario">Hola <span>{usuario.nombre}</span></p>) : null}
 
@@ -24,7 +24,7 @@ const Barra = () => {
                 >Cerrar Sesión</button>
             </nav>
         </header>
-     );
+    );
 };
- 
+
 export default Barra;
