@@ -18,7 +18,7 @@ const NuevaCuenta = (props) => {
             props.history.push('/proyectos');
         }
 
-        if(mensaje) {
+        if(mensaje && !autenticado) {
             mostrarAlerta(mensaje.msg, mensaje.categoria);
         }
         //eslint-disable-next-line
@@ -128,7 +128,7 @@ const NuevaCuenta = (props) => {
                         <input
                             type="submit"
                             className="btn btn-primario btn-block"
-                            value="Registrarme"
+                            value="Registrarme y Acceder"
                         />
                     </div>
                 </form>

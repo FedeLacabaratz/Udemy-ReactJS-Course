@@ -46,10 +46,10 @@ const TareaState = props => {
 
         try {
             const resultado = await clienteAxios.post('/api/tareas', tarea);
-            console.log(resultado)
+            
             dispatch({
                 type: AGREGAR_TAREA,
-                payload: resultado
+                payload: resultado.data.tarea
             })
         } catch (error) {
             console.log(error)
