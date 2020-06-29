@@ -14,15 +14,14 @@ const Login = (props) => {
 
     // En caso de que el password o usuario no exista
     useEffect(() => {
-        // if(autenticado) {
-        //     props.history.push('/proyectos');
-        // }
+        if(autenticado) {
+            props.history.push('/proyectos');
+        }
 
         if(mensaje) {
             mostrarAlerta(mensaje.msg, mensaje.categoria);
         }
-        
-
+        //eslint-disable-next-line
     }, [mensaje, autenticado, props.history])
 
     // State para iniciar sesion
@@ -33,7 +32,6 @@ const Login = (props) => {
 
     // Extraer de usuario
     const { email, password } = usuario;
-
     const onChange = e => {
         setUsuario({
             ...usuario,
@@ -51,7 +49,7 @@ const Login = (props) => {
         }
 
         // Pasarlo al action
-        iniciarSesion(email, password);
+        iniciarSesion({email, password});
     };
 
     return ( 
