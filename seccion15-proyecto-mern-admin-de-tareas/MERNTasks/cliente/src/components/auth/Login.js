@@ -18,7 +18,7 @@ const Login = (props) => {
             props.history.push('/proyectos');
         }
 
-        if(mensaje) {
+        if(mensaje && !autenticado) {
             mostrarAlerta(mensaje.msg, mensaje.categoria);
         }
         //eslint-disable-next-line
