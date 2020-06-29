@@ -17,6 +17,10 @@ const TareaSchema = mongoose.Schema({
     proyecto: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Proyecto'
+    },
+    __v: {
+        type: Number,
+        select: false
     }
 });
 

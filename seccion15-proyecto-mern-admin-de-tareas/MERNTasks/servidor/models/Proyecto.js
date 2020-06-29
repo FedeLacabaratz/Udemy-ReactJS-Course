@@ -14,6 +14,10 @@ const ProyectoSchema = mongoose.Schema({
     creado: {
         type: Date,
         default: Date.now()
+    },
+    __v: {
+        type: Number,
+        select: false
     }
 });
 

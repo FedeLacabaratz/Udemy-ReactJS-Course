@@ -13,7 +13,6 @@ exports.autenticarUsuario = async (req, res) => {
 
     // Extraer el email y password
     const { email, password } = req.body;
-
     try {
         // Revisar que sea un usuario registrado
         let usuario = await Usuario.findOne({ email });
@@ -23,8 +22,8 @@ exports.autenticarUsuario = async (req, res) => {
 
         // Revisar el password
         const passCorrecto = await bcryptjs.compare(password, usuario.password);
-        if (!passCorrecto) {
-            return res.status(400).json({msg: 'Password Incorrecto'})
+        if(!passCorrecto) {
+            return res.status(400).json({msg: 'Password Incorrecto'});
         }
 
         // Si todo es correcto crear el JWT
@@ -45,6 +44,17 @@ exports.autenticarUsuario = async (req, res) => {
         });
     } catch (error) {
         console.log(error);
-        res.status(500).send('Hubo un error');
+        res.status(500).json({msg: 'Hubo un error'});
+    }
+};
+
+// Obtiene que usuario esta autenticado
+exports.usuarioAutenticado = async (req, res) => {
+    try {
+        const usuario = await Usuario.findById(req.usuario.id).select('-password');
+        res.json({usuario});
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({msg: 'Hubo un error'});
     }
 };
