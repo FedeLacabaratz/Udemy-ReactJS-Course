@@ -59,14 +59,15 @@ const FormTarea = () => {
             // Agregar la nueva tarea al state de tareas
             tarea.proyecto = proyectoActual._id;
             agregarTarea(tarea);
-    
+            
             // Obtener y filtrar las tareas del proyecto actual
             obtenerTareas(proyectoActual._id);
-    
+            
             // Reiniciar el form
             setTarea({
                 nombre: ''
             });
+   
         } else {
             // Actualizar tarea existente
             actualizarTarea(tarea);
