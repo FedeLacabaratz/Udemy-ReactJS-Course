@@ -35,7 +35,7 @@ export default (state, action) => {
                 usuario: null,
                 autenticado: null,
                 mensaje: action.payload,
-                cargando: false
+                cargando: true
             }
         default:
             return state;
