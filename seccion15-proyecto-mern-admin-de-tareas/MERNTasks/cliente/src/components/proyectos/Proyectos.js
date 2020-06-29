@@ -5,21 +5,17 @@ import FormTarea from "../tareas/FormTarea";
 import ListadoTareas from '../tareas/ListadoTareas';
 import AuthContext from '../../context/autenticacion/AuthContext';
 
-const Proyectos = (props) => {
+const Proyectos = () => {
 
   // Extraer la información de autenticacion
   const authContext = useContext(AuthContext);
-  const { usuario, usuarioAutenticado } = authContext;
+  const { usuarioAutenticado } = authContext;
 
   
   useEffect(() => {
       usuarioAutenticado();
       //eslint-disable-next-line
   }, []);
-    
-  if(!usuario) {
-    props.history.push('/');
-  }
 
   return (
     <div className="contenedor-app">

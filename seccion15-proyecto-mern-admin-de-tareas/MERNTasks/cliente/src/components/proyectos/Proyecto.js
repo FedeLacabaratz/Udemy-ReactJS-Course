@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import ProyectoContext from '../../context/proyectos/ProyectoContext';
 import TareaContext from '../../context/tareas/TareaContext';
 
-const Proyecto = ({proyecto}) => {
+const Proyecto = ({ proyecto }) => {
 
     // Obtener el state de proyectos
     const proyectosContext = useContext(ProyectoContext);
@@ -13,20 +13,20 @@ const Proyecto = ({proyecto}) => {
     const { obtenerTareas } = tareasContext;
 
     // Maneja el onClick
-    const handleOnClick = () => {
-        proyectoActual(proyecto.id); // Fijar un proyecto actual
-        obtenerTareas(proyecto.id); // Filtrar las tareas cuando se de click
+    const handleOnClick = (id) => {
+        proyectoActual(id); // Fijar un proyecto actual
+        obtenerTareas(id); // Filtrar las tareas cuando se de click
     }
 
-    return ( 
+    return (
         <li>
             <button
                 type="button"
                 className="btn btn-blank"
-                onClick={handleOnClick}
+                onClick={() => handleOnClick(proyecto._id)}
             >{proyecto.nombre}</button>
         </li>
-     );
+    );
 }
- 
+
 export default Proyecto;

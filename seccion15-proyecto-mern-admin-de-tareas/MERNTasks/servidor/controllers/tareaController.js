@@ -40,7 +40,7 @@ exports.obtenerTareas = async (req, res) => {
 
     try {
         // Extraer el proyecto y comprobar si existe
-        const { proyecto } = req.body;
+        const { proyecto } = req.query;
 
         const existeProyecto = await Proyecto.findById(proyecto);
         if (!existeProyecto) {
@@ -53,7 +53,7 @@ exports.obtenerTareas = async (req, res) => {
         }
 
         // Obtener las tareas por proyecto
-        const tareas = await Tarea.find({ proyecto });
+        const tareas = await Tarea.find({ proyecto }).sort({ creado: -1 });
         res.json({ tareas });
 
     } catch (error) {
@@ -69,8 +69,8 @@ exports.actualizarTarea = async (req, res) => {
         const { proyecto, nombre, estado } = req.body;
 
         // Si la tarea existe o no
-        let tareaExiste = await Tarea.findById(req.params.id);
-        if (!tareaExiste) {
+        let tarea = await Tarea.findById(req.params.id);
+        if (!tarea) {
             return res.status(404).json({ msg: 'No existe la tarea' });
         }
 
@@ -83,16 +83,12 @@ exports.actualizarTarea = async (req, res) => {
 
         // Crear un objeto con la nueva información
         const nuevaTarea = {};
-        if (nombre) {
-            nuevaTarea.nombre = nombre;
-        }
-        if (estado) {
-            nuevaTarea.estado = estado;
-        }
+        nuevaTarea.nombre = nombre;
+        nuevaTarea.estado = estado;
 
         // Guardar la tarea
-        tareaExiste = await Tarea.findOneAndUpdate({ _id: req.params.id }, nuevaTarea, { new: true });
-        res.json({ tareaExiste });
+        tarea = await Tarea.findOneAndUpdate({ _id: req.params.id }, nuevaTarea, { new: true });
+        res.json({ tarea });
 
     } catch (error) {
         console.log(error);
@@ -104,11 +100,11 @@ exports.actualizarTarea = async (req, res) => {
 exports.eliminarTarea = async (req, res) => {
     try {
         // Extraer el proyecto y comprobar si existe la tarea
-        const { proyecto } = req.body;
+        const { proyecto } = req.query;
 
         // Si la tarea existe o no
-        let tareaExiste = await Tarea.findById(req.params.id);
-        if (!tareaExiste) {
+        let tarea = await Tarea.findById(req.params.id);
+        if (!tarea) {
             return res.status(404).json({ msg: 'No existe la tarea' });
         }
 
