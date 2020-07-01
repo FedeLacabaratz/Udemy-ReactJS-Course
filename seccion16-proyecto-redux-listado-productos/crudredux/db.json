@@ -1,0 +1,19 @@
+{
+  "productos": [
+    {
+      "nombre": "Jugo de Fresa",
+      "precio": "200",
+      "id": 5
+    },
+    {
+      "nombre": "Rib Eye 1Kg",
+      "precio": 800,
+      "id": 6
+    },
+    {
+      "nombre": "Noodles",
+      "precio": 20,
+      "id": 7
+    }
+  ]
+}
