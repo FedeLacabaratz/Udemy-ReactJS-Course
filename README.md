@@ -24,4 +24,5 @@ ReactJS course to learn about Hooks, Context and Redux, MERN, Gatsby & GraphQL; 
 
 [MernTasks App](https://proyecto-merntasks-app.netlify.app/) - Manage your projects and tasks with this very simple app made with MongoDB, Express, React and NodeJs (MERN).
 
+[ListaProductos App](https://listado-productos.netlify.app/#/) - Create, Read, Update and Delete products from a List with this very simple app made with React using Redux.
 
