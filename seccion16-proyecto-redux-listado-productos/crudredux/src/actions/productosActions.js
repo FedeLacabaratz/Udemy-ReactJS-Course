@@ -73,10 +73,8 @@ export function obtenerProductosAction() {
         dispatch( descargarProductos() );
 
         try {
-            setTimeout(async() => {
-                const respuesta = await clienteAxios.get('/productos');
-                dispatch( descargaProductosExitosa(respuesta.data) )                
-            }, 1000);
+            const respuesta = await clienteAxios.get('/productos');
+            dispatch( descargaProductosExitosa(respuesta.data) )                
         } catch (error) {
             dispatch( descargaProductosError(true))
         }

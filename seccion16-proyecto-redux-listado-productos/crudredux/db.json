@@ -2,18 +2,13 @@
   "productos": [
     {
       "nombre": "Jugo de Fresa Fresco",
-      "precio": 10,
+      "precio": "20",
       "id": 5
     },
     {
       "nombre": "Rib Eye 1Kg",
       "precio": 70,
       "id": 6
-    },
-    {
-      "nombre": "Noodles",
-      "precio": 6,
-      "id": 7
     },
     {
       "nombre": "Spaghetti",
@@ -29,6 +24,16 @@
       "nombre": "Red Wine",
       "precio": 90,
       "id": 10
+    },
+    {
+      "nombre": "Pizza",
+      "precio": 30,
+      "id": 11
+    },
+    {
+      "nombre": "Argentinean Empanadas",
+      "precio": "30",
+      "id": 12
     }
   ]
 }
