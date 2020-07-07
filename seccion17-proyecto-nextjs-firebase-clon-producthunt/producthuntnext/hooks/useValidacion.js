@@ -31,14 +31,32 @@ const useValidacion = (stateInicial, validar, fn) => {
         const erroresValidacion = validar(valores);
         setErrores(erroresValidacion);
         setSubmitForm(true);
-    }
+
+        setTimeout(() => {
+            setErrores({}); 
+          }, 1500);
+
+        setTimeout(() => {
+            setValores(stateInicial)
+          }, 3350);
+    };
+
+    // Cuando se realiza el evento de blur
+    const handleBlur = () => {
+        const erroresValidacion = validar(valores);
+        setErrores(erroresValidacion);
+
+        setTimeout(() => {
+            setErrores({}); 
+          }, 1500);
+    };
 
     return {
         valores,
         errores,
-        submitForm,
         handleSubmit,
-        handleChange
+        handleChange,
+        handleBlur
     };
 }
 
