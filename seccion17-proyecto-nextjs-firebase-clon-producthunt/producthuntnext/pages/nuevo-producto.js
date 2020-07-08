@@ -41,9 +41,7 @@ const NuevoProducto = () => {
     async function crearProducto() {
         // Si el usuario no esta autenticado llevar al login
         if (!usuario) {
-            setTimeout(() => {
-                return router.push('/login');
-            }, 1500)
+            return router.push('/login');
         }
 
         // Crear el objeto de nuevo producto
@@ -104,9 +102,9 @@ const NuevoProducto = () => {
     return (
         <div>
             <Layout>
-                {!usuario ? 
-                        <Error404 />
-                 : (
+                {!usuario ?
+                    <Error404 />
+                    : (
                         <Fragment>
                             <h1
                                 css={css`
