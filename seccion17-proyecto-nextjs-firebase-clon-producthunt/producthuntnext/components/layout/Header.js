@@ -2,6 +2,7 @@ import React, { useContext, Fragment } from 'react';
 import Link from 'next/link';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
+import { useRouter } from 'next/router';
 import Buscar from '../ui/Buscar';
 import Navegacion from './Navegacion';
 import Boton from '../ui/Boton';
@@ -17,7 +18,7 @@ const ContenedorHeader = styled.div`
     }
 `;
 
-const Logo = styled.p`
+const Logo = styled.a`
     color: var(--naranja);
     font-size: 4rem;
     line-height: 0;
@@ -29,6 +30,13 @@ const Logo = styled.p`
 const Header = () => {
 
     const { usuario, firebase } = useContext(FirebaseContext);
+
+    const router = useRouter();
+
+    const handleCerrarSesion = () => {
+        firebase.cerrarSesion();
+        return router.push('/');
+    }
 
     return (
         <header
@@ -66,7 +74,7 @@ const Header = () => {
                             >Hola: {usuario.displayName}</p>
                             <Boton
                                 bgColor="true"
-                                onClick={() => firebase.cerrarSesion() }
+                                onClick={handleCerrarSesion}
                             >Cerrar Sesión</Boton>
                         </Fragment>
                     ) : (

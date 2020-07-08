@@ -18,15 +18,12 @@ const STATE_INICIAL = {
 const Login = () => {
 
     const [ error, setError ] = useState(false);
-
     const { valores, errores, handleSubmit, handleChange, handleBlur } = useValidacion(STATE_INICIAL, validarIniciarSesion, iniciarSesion);
-
     const { email, password } = valores;
 
     async function iniciarSesion() {
         try {
             const usuario = await firebase.login(email, password);
-            console.log(usuario);
             Router.push('/');
         } catch (error) {
             setError(error.message);
