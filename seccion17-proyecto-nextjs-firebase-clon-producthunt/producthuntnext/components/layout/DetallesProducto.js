@@ -80,7 +80,7 @@ const Imagen = styled.img`
 
 const DetallesProducto = ({ producto }) => {
 
-    const { id, comentarios, creado, descripcion, empresa, nombre, url, urlImagen, votos } = producto;
+    const { id, comentarios, creado, descripcion, nombre, urlImagen, votos } = producto;
     
     return (
         <Producto>

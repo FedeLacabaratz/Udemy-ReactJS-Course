@@ -47,7 +47,7 @@ const Producto = () => {
     useEffect(() => {
 
         //Declaramos variable para trackear si esta o no el componente montado
- 
+
         let isCancelled = false;
 
         if (id && consultarDB) {
@@ -56,7 +56,7 @@ const Producto = () => {
                 const producto = await productoQuery.get();
 
                 // Se ejecuta si esta montado el componente
-                if(!isCancelled) {
+                if (!isCancelled) {
                     if (producto.exists) {
                         setProducto(producto.data());
                         setConsultarDB(false);
@@ -280,6 +280,18 @@ const Producto = () => {
                         </ContenedorProducto>
                         {puedeBorrar() &&
                             <Boton
+                                css={css`
+                                    background-color: var(--gris2);
+                                    width: 100%;
+                                    padding: 1rem;
+                                    text-align: center;
+                                    color: #fff;
+                                    font-size: 1.8rem;
+                                    text-transform: uppercase;
+                                    border: none;
+                                    font-family: 'PT Sans', sans-serif;
+                                    font-weight: 700;
+                                `}
                                 onClick={eliminarProducto}
                             >Eliminar Producto</Boton>
                         }
