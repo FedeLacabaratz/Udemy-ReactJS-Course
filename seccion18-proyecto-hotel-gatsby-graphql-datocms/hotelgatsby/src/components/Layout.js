@@ -13,8 +13,9 @@ const Layout = (props) => {
                     }
                     body {
                         font-size: 16px;
-                        font-size: 1.6rem;
+                        font-size: 1.8rem;
                         line-height: 1.5;
+                        font-family: 'PT Sans', sans-serif;
                     }
                     h1, h2, h3 {
                         margin: 0;
