@@ -8,7 +8,7 @@ const ImagenBackground = styled(BackgroundImage)`
 `;
 
 const TextoImagen = styled.div`
-  background-image: linear-gradient( to top, rgba(34, 49, 63, .6),rgba(34, 49, 63, .6) );
+  background-image: linear-gradient( to top, rgba(34, 49, 63, .5),rgba(34, 49, 63, .5) );
   color: #fff;
   height: 100%;
   display: flex;
