@@ -1,10 +1,11 @@
 import React from "react";
 import Layout from '../components/Layout';
-
+import ContenidoNosotros from '../components/ContenidoNosotros';
+import { css } from '@emotion/core';
 
 const Nosotros = () => (
   <Layout>
-    <h1>Nosotros</h1>
+    <ContenidoNosotros>Nosotros</ContenidoNosotros>
   </Layout>
 )
 export default Nosotros;

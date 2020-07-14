@@ -26,4 +26,5 @@ ReactJS course to learn about Hooks, Context and Redux, MERN, Gatsby & GraphQL; 
 
 [ProductHuntClon App](https://product-hunt-clon.web.app/) - Surf this clon of the Producthunt.com website, that allows you to perform CRUD operations. It has been created with Next.js, Firebase, React and NodeJs (MERN).
 
+[Hotel Gatsby](https://the-hotel-gatsby.netlify.app/) - Check out this small and very simple server-side-rendered website. It has been created with Gatsby, GraphQL, React and DatoCMS.
 
