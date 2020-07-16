@@ -28,5 +28,5 @@ ReactJS course to learn about Hooks, Context and Redux, MERN, Gatsby & GraphQL; 
 
 [Hotel Gatsby](https://the-hotel-gatsby.netlify.app/) - Check out this small and very simple server-side-rendered website. It has been created with Gatsby, GraphQL, React and DatoCMS.
 
-[Gatsby Real Estate](https://gatsby-bienes-raices.netlify.app/) - Check out this real estate excercise of a complete server-side-rendered website. It has been created with Gatsby, GraphQL, React and Strapi.
+[Gatsby Real Estate](https://gatsby-bienes-raices.netlify.app/) - Check out this real estate exercise of a complete server-side-rendered website. It has been created with Gatsby, GraphQL, React and Strapi.
 
