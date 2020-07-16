@@ -21,7 +21,7 @@ const ListadoPropiedades = () => {
         } else {
             setFiltradas(propiedades);
         }
-
+        //eslint-disable-next-line
     }, [categoria])
 
     return (
