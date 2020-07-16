@@ -21,14 +21,14 @@ const ListadoPropiedades = () => {
         } else {
             setFiltradas(propiedades);
         }
-
+        //eslint-disable-next-line
     }, [categoria])
 
     return (
         <>
             <h2
                 css={css`
-                margin-top: 5rem;
+                margin-top: 2rem;
             `}
             >Nuestras Propiedades</h2>
             {FiltroUI()}
