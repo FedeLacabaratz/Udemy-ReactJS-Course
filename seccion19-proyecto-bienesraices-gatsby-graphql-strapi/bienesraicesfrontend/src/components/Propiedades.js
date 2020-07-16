@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import Image from 'gatsby-image';
 import Iconos from './Iconos';
 import Layout from './Layout';
+import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
 
 const Contenido = styled.div`
@@ -68,7 +69,11 @@ const Propiedades = ({ data }) => {
 
     return (
         <Layout>
-            <h1>{nombre}</h1>
+            <h1
+                css={css`
+                margin: 2rem auto;
+                `}
+            >{nombre}</h1>
             <Contenido>
                 <main>
                     <Image

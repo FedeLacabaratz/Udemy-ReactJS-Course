@@ -35,7 +35,11 @@ const Index = () => {
                         margin: 0 auto;
                     `}
                 >
-                    <h1>{nombre}</h1>
+                    <h1
+                        css={css`
+                        margin-top: 2rem;
+                        `}
+                    >{nombre}</h1>
                     <p
                         css={css`
                     text-align: center;

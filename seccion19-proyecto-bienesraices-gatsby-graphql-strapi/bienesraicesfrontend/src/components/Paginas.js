@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Image from 'gatsby-image';
 import Layout from './Layout';
+import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
 import ListadoPropiedades from '../components/ListadoPropiedades';
 
@@ -42,7 +43,11 @@ const Propiedades = ({ data }) => {
     return (
         <Layout>
             <main className="contenedor">
-                <h1>{nombre}</h1>
+                <h1
+                    css={css`
+                        margin: 2rem auto;
+                    `}
+                >{nombre}</h1>
                 <ContenidoPagina>
                     <Image
                         fluid={imagen.sharp.fluid}
