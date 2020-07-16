@@ -56,7 +56,7 @@ const PropiedadPreview = ({ propiedad }) => {
                     habitaciones={habitaciones}
                 />
                 <Boton
-                    to={urlSlug(nombre)}
+                    to={`/${urlSlug(nombre)}`}
                 >
                     Ver detalle
                 </Boton>
