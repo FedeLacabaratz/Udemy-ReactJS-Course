@@ -10,7 +10,7 @@ module.exports = (req, res, next) => {
 
         // Comprobar el jwt
         try {
-            const usuario = jwt.verify(token, process.env.SECRET,);
+            const usuario = jwt.verify(token, process.env.SECRET);
             req.usuario = usuario;
 
         } catch (error) {
