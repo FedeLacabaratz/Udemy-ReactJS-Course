@@ -5,6 +5,7 @@ import Dropzone from '../components/Dropzone';
 import AuthContext from '../context/auth/authContext';
 import AppContext from '../context/app/appContext';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Index = () => {
 
@@ -17,7 +18,12 @@ const Index = () => {
   const { mensaje_archivo, url } = appContext;
 
   useEffect(() => {
-    usuarioAutenticado()
+    const token = localStorage.getItem('token');
+
+    if(token) {
+      usuarioAutenticado()
+    }
+    
   }, []);
 
   return (
