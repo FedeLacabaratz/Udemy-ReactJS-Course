@@ -1,6 +1,5 @@
 import React, { useCallback, useContext } from 'react';
 import { useDropzone } from 'react-dropzone';
-import clienteAxios from '../config/axios';
 import AppContext from '../context/app/appContext';
 
 const Dropzone = () => {

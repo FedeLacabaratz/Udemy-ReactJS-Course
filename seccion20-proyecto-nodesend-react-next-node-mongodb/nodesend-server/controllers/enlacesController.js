@@ -48,6 +48,17 @@ exports.nuevoEnlace = async (req, res, next) => {
     }
 };
 
+// Obtiene un listado de todos los enlaces
+exports.todosEnlaces = async (req, res) => {
+
+    try {
+        const enlaces = await Enlaces.find({}).select('url -_id');
+        res.json({enlaces});
+    } catch (error) {
+        console.log(error.message)
+    }
+};
+
 // Obtener el enlace
 exports.obtenerEnlace = async (req, res, next) => {
 
@@ -63,19 +74,5 @@ exports.obtenerEnlace = async (req, res, next) => {
     // Si el enlace existe
     res.json({ archivo: enlace.nombre })
 
-    // Si las descargas son iguales a 1 borrar la entrada y el archivo
-    const { descargas, nombre } = enlace;
-
-    if(descargas === 1) {
-        // Eliminar el archivo
-        req.archivo = nombre;
-        // Eliminar la entrada de la base de datos
-        await Enlaces.findOneAndRemove(req.params.url);
-        next();
-    } else {
-        // Si las descargas son > 1, entonces restar 1
-        enlace.descargas--;
-        await enlace.save();
-    }
-
+    next();
 };
