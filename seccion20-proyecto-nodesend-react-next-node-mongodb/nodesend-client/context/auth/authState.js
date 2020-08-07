@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
+import { useRouter } from 'next/router';
 
 import {
     REGISTRO_EXITOSO,
@@ -9,7 +10,8 @@ import {
     LOGIN_EXITOSO,
     LOGIN_ERROR,
     USUARIO_AUTENTICADO,
-    CERRAR_SESION
+    CERRAR_SESION,
+    LIMPIAR_STATE
 } from '../../types';
 
 import clienteAxios from '../../config/axios';
@@ -17,9 +19,12 @@ import tokenAuth from '../../config/tokenAuth';
 
 const AuthState = ({ children }) => {
 
+    // Routing
+    const router = useRouter();
+
     // Definir un state inicial
     const initialState = {
-        token: typeof window !== 'undefined' ? localStorage.getItem('token') : '',
+        token: typeof window !== 'undefined' ? localStorage.getItem('token') : null,
         autenticado: null,
         usuario: null,
         mensaje: null
@@ -54,7 +59,7 @@ const AuthState = ({ children }) => {
 
     // Autenticar usuarios
     const iniciarSesion = async datos => {
-
+        
         try {
             const respuesta = await clienteAxios.post('/api/auth', datos);
             dispatch({
@@ -84,10 +89,13 @@ const AuthState = ({ children }) => {
         }
         try {
             const respuesta = await clienteAxios.get('/api/auth');
-            dispatch({
-                type: USUARIO_AUTENTICADO,
-                payload: respuesta.data.usuario
-            })
+
+            if(respuesta.data.usuario) {
+                dispatch({
+                    type: USUARIO_AUTENTICADO,
+                    payload: respuesta.data.usuario
+                })
+            }
         } catch (error) {
             dispatch({
                 type: LOGIN_ERROR,
@@ -95,14 +103,22 @@ const AuthState = ({ children }) => {
             })
         }
     };
+    
+    const limpiarState = () => {
+        dispatch({
+            type: LIMPIAR_STATE,
+        })
+    };
 
     // Cerrar la sesión
     const cerrarSesion = () => {
         dispatch({
             type: CERRAR_SESION
-        })
-    }
-
+        });
+        router.push('/');
+        limpiarState();
+    };
+    
     return (
         <AuthContext.Provider
             value={{
@@ -113,7 +129,8 @@ const AuthState = ({ children }) => {
                 registrarUsuario,
                 iniciarSesion,
                 usuarioAutenticado,
-                cerrarSesion
+                cerrarSesion,
+                limpiarState
             }}
         >
             {children}
