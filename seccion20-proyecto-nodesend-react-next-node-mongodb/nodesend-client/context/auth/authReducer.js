@@ -1,19 +1,19 @@
 import {
     REGISTRO_EXITOSO,
     REGISTRO_ERROR,
-    LIMPIAR_ALERTA,
+    OCULTAR_ALERTA,
     LOGIN_EXITOSO,
     LOGIN_ERROR,
     USUARIO_AUTENTICADO,
     CERRAR_SESION
 } from '../../types';
 
-const reducer = (state, action) => {
+const authReducer = (state, action) => {
     switch (action.type) {
         case REGISTRO_EXITOSO:
         case REGISTRO_ERROR:
         case LOGIN_ERROR:
-        case LIMPIAR_ALERTA:
+        case OCULTAR_ALERTA:
             return {
                 ...state,
                 mensaje: action.payload
@@ -43,4 +43,4 @@ const reducer = (state, action) => {
     }
 };
 
-export default reducer;
+export default authReducer;

@@ -26,7 +26,6 @@ exports.uploadFile = async (req, res, next) => {
     const upload = multer(configuracionMulter).single('archivo');
     
     upload(req, res, async (error) => {
-        console.log(req.file);
         if(!error) {
             res.json({archivo: req.file.filename});
         } else {
@@ -37,8 +36,6 @@ exports.uploadFile = async (req, res, next) => {
 };
 
 exports.deleteFile = async (req, res) => {
-    console.log(req.archivo)
-
     try {
         fs.unlinkSync(__dirname + `/../uploads/${req.archivo}`);
         console.log('Archivo Eliminado');
